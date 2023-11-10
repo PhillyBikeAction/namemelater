@@ -1,4 +1,4 @@
-# Bronson
+# NameMeLater
 
 Philly Bike Action's Discord bot!
 
@@ -35,7 +35,7 @@ index deadbee..fdeadbee 100644
 Then compile your dependencies and pin your hashes!
 
 ```
-(venv) hostname:bronson user$ pip-compile --generate-hashes
+(venv) hostname:namemelater user$ pip-compile --generate-hashes
 ```
 
 Commit the results and you're all set!
@@ -47,11 +47,11 @@ Once compiled, the _only_ version allowed will be the one calculated at that tim
 To update a specific package:
 
 ```
-(venv) hostname:bronson user$ pip-compile --generate-hashes -P SomePackage
+(venv) hostname:namemelater user$ pip-compile --generate-hashes -P SomePackage
 ```
 
 To update _all_ dependencies:
 
 ```
-(venv) hostname:bronson user$ pip-compile --generate-hashes -U
+(venv) hostname:namemelater user$ pip-compile --generate-hashes -U
 ```
