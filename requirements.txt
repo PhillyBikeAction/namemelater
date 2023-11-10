@@ -204,7 +204,9 @@ charset-normalizer==3.3.2 \
 click==8.1.7 \
     --hash=sha256:ae74fb96c20a0277a1d615f1e4d73c8414f5a98db8b799a7931d1582f3390c28 \
     --hash=sha256:ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de
-    # via pip-tools
+    # via
+    #   -r requirements.in
+    #   pip-tools
 discord-py==2.3.2 \
     --hash=sha256:4560f70f2eddba7e83370ecebd237ac09fbb4980dc66507482b0c0e5b8f76b9c \
     --hash=sha256:9da4679fc3cb10c64b388284700dc998663e0e57328283bbfcfc2525ec5960a6
