@@ -1,0 +1,16 @@
+version: '3.9'
+
+services:
+  namemelater:
+    build:
+      context: .
+      args:
+        DEVEL: "yes"
+    image: namemelater:docker-compose
+    stdin_open: true
+    tty: true
+    command: hupper -m namemelater run
+    env_file: .env
+    volumes:
+      - ./requirements:/opt/namemelater/src/requirements:z
+      - ./namemelater:/opt/namemelater/src/namemelater:z

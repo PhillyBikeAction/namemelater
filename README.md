@@ -7,9 +7,34 @@ discord server.
 
 ## Getting Started
 
+You will need a Discord bot token to _actually_ run the bot.
+
+```shell
+echo 'DISCORD_BOT_TOKEN="PBA..replace with your token..BL4A"' > .env
+```
+
+TODO: A development mode is provided that just drops you into a REPL with
+`namemelater`.
+
 ### Docker
 
+```
+docker compose run --rm namemelater
+```
+
+This will start the bot and auto-reload it anytime code changes!
+
 ### Native
+
+```shell
+python3.11 -m venv venv
+source venv/bin/activate
+source .env
+pip install -r requirements.txt
+hupper -m namemelater run
+```
+
+This will start the bot and auto-reload it anytime code changes!
 
 ## Common activities
 
@@ -19,13 +44,13 @@ This project uses [`pip-tools`](https://pip-tools.readthedocs.io/en/stable/)
 to manage dependencies.
 
 To add a dependency, you'll need to add the name (and any version specifiers)
-to [`requirements.in`](requirements.in).
+to [`requirements/main.in`](requirements/main.in).
 
 ```
-diff --git a/requirements.in b/requirements.in
+diff --git a/requirements/main.in b/requirements/main.in
 index deadbee..fdeadbee 100644
---- a/requirements.in
-+++ b/requirements.in
+--- a/requirements/main.in
++++ b/requirements/main.in
 @@ -1,2 +1,3 @@
  discord.py
  pip-tools
@@ -35,7 +60,7 @@ index deadbee..fdeadbee 100644
 Then compile your dependencies and pin your hashes!
 
 ```
-(venv) hostname:namemelater user$ pip-compile --generate-hashes
+(venv) hostname:namemelater user$ pip-compile --generate-hashes requirements/main.in
 ```
 
 Commit the results and you're all set!
@@ -47,11 +72,11 @@ Once compiled, the _only_ version allowed will be the one calculated at that tim
 To update a specific package:
 
 ```
-(venv) hostname:namemelater user$ pip-compile --generate-hashes -P SomePackage
+(venv) hostname:namemelater user$ pip-compile --generate-hashes requirements/main.in -P SomePackage
 ```
 
 To update _all_ dependencies:
 
 ```
-(venv) hostname:namemelater user$ pip-compile --generate-hashes -U
+(venv) hostname:namemelater user$ pip-compile --generate-hashes requirements/main.in -U
 ```
