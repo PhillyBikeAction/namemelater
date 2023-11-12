@@ -38,6 +38,14 @@ This will start the bot and auto-reload it anytime code changes!
 
 ## Common activities
 
+### Adding a command
+
+Commands are created by adding a function decorated with the
+`discord.ext.commands.command` decorator in a module in
+[`namemelater/discord/commands`](namemelater/discord/commands).
+
+Please see discord.py documentation on commands!
+
 ### Adding a message handler
 
 Message handlers are created by adding a module to
