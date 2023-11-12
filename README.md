@@ -38,6 +38,24 @@ This will start the bot and auto-reload it anytime code changes!
 
 ## Common activities
 
+### Adding a message handler
+
+Message handlers are created by adding a module to
+[`namemelater/discord/handlers`](namemelater/discord/handlers).
+
+That module should contain a class that inherits from
+[`OnMessage`](namemelater/discord/handlers/__init__.py)
+and implements both a `condition` and `on_message` method.
+
+`condition` is called with a discord.py `Message` object and determines
+if the handler will be called. If `condition` returns `True`, `on_message`
+will be called with the same `Message` object.
+
+Handlers can set `priority` and `terminal` attributes that configure
+what order they well be checked in (lower `priority` values execute first)
+and if once `on_message` is called the execution should cease (basically no
+more handlers will be checked or executed if `terminal = True`.
+
 ### Adding a dependency
 
 This project uses [`pip-tools`](https://pip-tools.readthedocs.io/en/stable/)
