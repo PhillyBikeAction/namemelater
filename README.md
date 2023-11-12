@@ -41,7 +41,9 @@ This will start the bot and auto-reload it anytime code changes!
 ### Adding a command
 
 Commands are created by adding a function decorated with the
-`discord.ext.commands.command` decorator in a module in
+`discord.ext.commands.command` (for message based commands)
+or `discord.app_commands.command` (for slash commands)
+decorators in a module in
 [`namemelater/discord/commands`](namemelater/discord/commands).
 
 Please see discord.py documentation on commands!

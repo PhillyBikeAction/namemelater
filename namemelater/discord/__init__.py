@@ -3,6 +3,7 @@ import importlib
 import pkgutil
 
 import discord
+from discord import app_commands
 from discord.ext import commands as discord_commands
 
 from namemelater.discord.handlers import OnMessage
@@ -24,6 +25,10 @@ class NameMeLaterBot(discord_commands.Bot):
         print("Loaded commands:")
         for c in self.commands:
             print(c)
+
+        for server in bot.guilds:
+            self.tree.copy_global_to(guild=discord.Object(id=server.id))
+            await self.tree.sync(guild=discord.Object(id=server.id))
 
     async def on_message(self, message):
         print(f"Message from {message.author}: {message.content}")
@@ -50,13 +55,14 @@ bot = NameMeLaterBot(
     intents=intents,
 )
 
+
+# We want to automatically import all of the namemelater.discord.commands.* modules so that
+# any commands registered in any of them will be discovered.
 existing = []
 for obj in gc.get_objects():
     if isinstance(obj, discord_commands.Command):
         existing.append(obj)
 
-# We want to automatically import all of the namemelater.discord.commands.* modules so that
-# any commands registered in any of them will be discovered.
 for _, name, _ in pkgutil.walk_packages(
     [__path__[0] + "/commands"], prefix=__name__ + ".commands."
 ):
@@ -65,3 +71,5 @@ for _, name, _ in pkgutil.walk_packages(
 for obj in gc.get_objects():
     if isinstance(obj, discord_commands.Command) and obj not in existing:
         bot.add_command(obj)
+    if isinstance(obj, app_commands.Command):
+        bot.tree.add_command(obj)
