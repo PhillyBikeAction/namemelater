@@ -5,6 +5,8 @@ Philly Bike Action's Discord bot!
 This codebase implements a set of interactions that can be initiated from the
 discord server.
 
+It is built with interactions-py [docs](https://interactions-py.github.io/interactions.py/Guides/).
+
 ## Getting Started
 
 You will need a Discord bot token to _actually_ run the bot.
@@ -48,7 +50,9 @@ Commands can be added by creating an interaction-py
 [Extension](https://interactions-py.github.io/interactions.py/Guides/20%20Extensions/)
 [`namemelater/discord/commands`](namemelater/discord/commands).
 
-Please see interactions-py's documentation on commands!
+Please see interactions-py's
+[documentation](https://interactions-py.github.io/interactions.py/Guides/03%20Creating%20Commands/)
+on commands!
 
 ### Adding a message handler
 
