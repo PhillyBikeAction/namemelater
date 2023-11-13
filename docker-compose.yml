@@ -10,6 +10,7 @@ services:
     stdin_open: true
     tty: true
     command: python -m namemelater dev
+    stop_signal: SIGINT
     env_file: .env
     volumes:
       - ./requirements:/opt/namemelater/src/requirements:z
