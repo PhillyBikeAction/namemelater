@@ -9,6 +9,10 @@ discord server.
 
 You will need a Discord bot token to _actually_ run the bot.
 
+The best way is to setup your own guild for testing/development and then
+follow the excellent guide on [Creating a Bot](https://interactionspy.readthedocs.io/en/latest/quickstart.html#creating-a-bot)
+from interactions-py's documentation.
+
 ```shell
 echo 'DISCORD_BOT_TOKEN="PBA..replace with your token..BL4A"' > .env
 ```
@@ -40,13 +44,11 @@ This will start the bot and auto-reload it anytime code changes!
 
 ### Adding a command
 
-Commands are created by adding a function decorated with the
-`discord.ext.commands.command` (for message based commands)
-or `discord.app_commands.command` (for slash commands)
-decorators in a module in
+Commands can be added by creating an interaction-py
+[Extension](https://interactions-py.github.io/interactions.py/Guides/20%20Extensions/)
 [`namemelater/discord/commands`](namemelater/discord/commands).
 
-Please see discord.py documentation on commands!
+Please see interactions-py's documentation on commands!
 
 ### Adding a message handler
 
@@ -57,7 +59,7 @@ That module should contain a class that inherits from
 [`OnMessage`](namemelater/discord/handlers/__init__.py)
 and implements both a `condition` and `on_message` method.
 
-`condition` is called with a discord.py `Message` object and determines
+`condition` is called with a interactions-py `event.message` object and determines
 if the handler will be called. If `condition` returns `True`, `on_message`
 will be called with the same `Message` object.
 
