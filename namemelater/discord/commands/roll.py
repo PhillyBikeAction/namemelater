@@ -13,7 +13,6 @@ class RollCommand(Extension):
         except Exception:
             await ctx.reply("Format has to be in NdN!")
             return
-        print(ctx)
 
         result = ", ".join(str(random.randint(1, limit)) for r in range(rolls))
         await ctx.reply(result)

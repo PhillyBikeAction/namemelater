@@ -9,7 +9,7 @@ services:
     image: namemelater:docker-compose
     stdin_open: true
     tty: true
-    command: hupper -m namemelater run
+    command: python -m namemelater dev
     env_file: .env
     volumes:
       - ./requirements:/opt/namemelater/src/requirements:z

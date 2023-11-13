@@ -37,10 +37,10 @@ python3.11 -m venv venv
 source venv/bin/activate
 source .env
 pip install -r requirements.txt
-hupper -m namemelater run
+python -m namemelater dev
 ```
 
-This will start the bot and auto-reload it anytime code changes!
+This will start the bot and hot-reload it anytime code changes!
 
 ## Common activities
 
