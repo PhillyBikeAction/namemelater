@@ -70,6 +70,7 @@ FROM python:3.11.6-slim-bookworm
 
 # Setup some basic environment variables that are ~never going to change.
 ENV PYTHONUNBUFFERED 1
+ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONPATH /opt/namemelater/src/
 ENV PATH="/opt/namemelater/bin:${PATH}"
 

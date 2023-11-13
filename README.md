@@ -42,6 +42,32 @@ python -m namemelater dev
 
 This will start the bot and hot-reload it anytime code changes!
 
+## Code Quality
+
+This repo uses [`black`](https://github.com/psf/black) for code formatting
+and [ruff](https://github.com/astral-sh/ruff) for linting.
+
+[`tox`](https://tox.wiki/) can be used to easily run the checks
+and also to attempt to auto reformat with `black`:
+
+Checks: `tox -e lint` or `make lint`
+
+Reformat: `tox -e reformat` or `make reformat`
+
+```shell
+$ tox -e lint
+  lint: OK (0.02 seconds)
+  congratulations :) (0.04 seconds)
+$ tox -e reformat
+reformat: commands[0]> black .
+All done! ✨ 🍰 ✨
+13 files left unchanged.
+  reformat: OK (0.12=setup[0.02]+cmd[0.10] seconds)
+  congratulations :) (0.15 seconds)
+```
+
+
+
 ## Common activities
 
 ### Adding a command

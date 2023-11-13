@@ -6,7 +6,7 @@ from interactions.ext.prefixed_commands import prefixed_command, PrefixedContext
 
 class RollCommand(Extension):
     @prefixed_command(name="roll")
-    async def roll(self, ctx: PrefixedContext, dice: str):
+    async def roll(self, ctx: PrefixedContext, dice: str = None):
         """Rolls a dice in NdN format."""
         try:
             rolls, limit = map(int, dice.split("d"))
