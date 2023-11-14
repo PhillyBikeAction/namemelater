@@ -28,7 +28,7 @@ jobs:
             git reset --hard FETCH_HEAD
             git clean -d -f --exclude .env
             venv/bin/pip install -r requirements/main.txt
-            bash -c "source '.env' && bash 'venv/bin/python -m aenrich upgrade'"
+            bash -c "export $(cat .env | xargs) && venv/bin/aerich upgrade"
             sudo /usr/bin/systemctl restart namemelater
             sleep 5
             /usr/bin/journalctl -u namemelater -q | tail
