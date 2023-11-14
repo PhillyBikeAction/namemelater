@@ -32,6 +32,8 @@ This will start the bot and auto-reload it anytime code changes!
 
 ### Native
 
+NOTE: you are currently on your own here for database concerns!
+
 ```shell
 python3.11 -m venv venv
 source venv/bin/activate
@@ -97,6 +99,24 @@ Handlers can set `priority` and `terminal` attributes that configure
 what order they well be checked in (lower `priority` values execute first)
 and if once `on_message` is called the execution should cease (basically no
 more handlers will be checked or executed if `terminal = True`.
+
+### Creating or updating a model
+
+Models are defined using [`tortoise-orm`](https://tortoise.github.io).
+
+Add your model to a module in [`namemelater/models`](namemelater/models)
+and add it to the import and `__all__` of
+[`namemelater/models/__init__.py`](namemelater/models/__init__.py).
+
+Or make the changes you need to an existing model.
+
+Then you need to create a migration and apply it:
+
+```
+make migrate -- --name my migration name
+make db-upgrade
+```
+
 
 ### Adding a dependency
 

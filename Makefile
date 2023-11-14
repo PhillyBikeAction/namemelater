@@ -14,3 +14,15 @@ lint:
 
 reformat:
 	tox -e reformat
+
+serve:
+	docker compose up
+
+migrate:
+	docker compose run --rm namemelater aerich migrate $(filter-out $@,$(MAKECMDGOALS))
+
+db-upgrade:
+	docker compose run --rm namemelater aerich upgrade
+
+dbshell:
+	docker-compose exec db psql -U postgres postgres

@@ -2,6 +2,7 @@ import pkgutil
 
 from interactions import Client, Intents, listen
 from interactions.ext import prefixed_commands
+from tortoise import Tortoise
 
 from namemelater.discord.handlers import OnMessage
 
@@ -9,6 +10,8 @@ from namemelater.discord.handlers import OnMessage
 class NameMeLaterBot(Client):
     @listen()
     async def on_ready(self):
+        await self.db_init(self.db_url)
+
         print(f"Logged on as {self.user}!")
         print(f"Joined guilds: {', '.join([str(g) for g in self.guilds])}")
 
@@ -32,6 +35,14 @@ class NameMeLaterBot(Client):
                 await handler.on_message(event.message)
                 if handler.terminal:
                     break
+
+    async def db_init(self, db_url):
+        await Tortoise.init(db_url=db_url, modules={"models": ["namemelater.models"]})
+        await Tortoise.generate_schemas()
+
+    def run(self, token, db_url):
+        self.db_url = db_url
+        self.start(token)
 
 
 bot = NameMeLaterBot(

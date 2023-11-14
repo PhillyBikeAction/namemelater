@@ -12,4 +12,4 @@ from namemelater.discord import bot
     default=lambda: os.environ.get("DISCORD_BOT_TOKEN", ""),
 )
 def run(discord_token):
-    bot.start(discord_token)
+    bot.run(discord_token)
