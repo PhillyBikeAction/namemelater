@@ -1,2 +1,4 @@
+aerich
 click
 discord-py-interactions
+tortoise-orm[asyncpg]

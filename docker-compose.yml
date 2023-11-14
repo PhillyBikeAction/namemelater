@@ -1,6 +1,22 @@
 version: '3.9'
 
+volumes:
+  postgresdata:
+
 services:
+  db:
+    image: postgres:16
+    restart: always
+    environment:
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgresdata:/var/lib/postgresql/data/
+    healthcheck:
+      test: ["CMD", "pg_isready", "-U", "postgres", "-d", "postgres"]
+      interval: 1s
+      start_period: 10s
   namemelater:
     build:
       context: .
@@ -12,6 +28,13 @@ services:
     command: python -m namemelater dev
     stop_signal: SIGINT
     env_file: .env
+    environment:
+      DATABASE_URL: "asyncpg://postgres@db/postgres"
     volumes:
       - ./requirements:/opt/namemelater/src/requirements:z
       - ./namemelater:/opt/namemelater/src/namemelater:z
+      - ./pyproject.toml:/opt/namemelater/src/pyproject.toml:z
+      - ./migrations:/opt/namemelater/src/migrations:z
+    depends_on:
+      db:
+        condition: service_healthy
