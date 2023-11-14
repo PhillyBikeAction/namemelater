@@ -11,5 +11,9 @@ from namemelater.discord import bot
     "--discord-token",
     default=lambda: os.environ.get("DISCORD_BOT_TOKEN", ""),
 )
-def run(discord_token):
-    bot.run(discord_token)
+@click.option(
+    "--db-url",
+    default=lambda: os.environ.get("DATABASE_URL", ""),
+)
+def run(discord_token, db_url):
+    bot.run(discord_token, db_url)
