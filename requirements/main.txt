@@ -266,9 +266,9 @@ dictdiffer==0.9.0 \
     --hash=sha256:17bacf5fbfe613ccf1b6d512bd766e6b21fb798822a133aa86098b8ac9997578 \
     --hash=sha256:442bfc693cfcadaf46674575d2eba1c53b42f5e404218ca2c2ff549f2df56595
     # via aerich
-discord-py-interactions==5.10.0 \
-    --hash=sha256:4dbd4b6fc4524837bfad15ce9228e2d9326d1840eb71ef72ade8b95a01b1dd05 \
-    --hash=sha256:6c7b9e168f1e9ea07481ad1ded5cdd7ecd3f61921ed59d21f4e21d013e4c0aae
+discord-py-interactions==5.11.0 \
+    --hash=sha256:0f4f0cf97182c7c85dea68123a0a7ac2b4dd5527e4342779865552dce5faf73f \
+    --hash=sha256:ba58247c1b671818105dcb046f824e126118e12889951870ec7b283947c8c013
     # via -r requirements/main.in
 discord-typings==0.7.0 \
     --hash=sha256:6c776da9153cde775c93cf744207297e4baec3f805b290216ebd490a86ff3140 \
