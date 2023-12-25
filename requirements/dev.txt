@@ -4,9 +4,9 @@
 #
 #    pip-compile --generate-hashes requirements/dev.in
 #
-aioconsole==0.6.2 \
-    --hash=sha256:1968021eb03b88fcdf5f5398154b21585e941a7b98c9fcef51c4bb0158156619 \
-    --hash=sha256:bac11286f1062613d2523ceee1ba81c676cd269812b865b66b907448a7b5f63e
+aioconsole==0.7.0 \
+    --hash=sha256:c702d24406378d37d9873f91e03ce71520bac503d5ab03f81d8b563ff010bd54 \
+    --hash=sha256:ee799435f77e8c3a2a7207c465feae2343a2aa537c38e8f56b629c8a321a02d0
     # via aiomonitor
 aiohttp==3.8.6 \
     --hash=sha256:002f23e6ea8d3dd8d149e569fd580c999232b5fbc601c48d55398fbc2e582e8c \
@@ -97,9 +97,9 @@ aiohttp==3.8.6 \
     --hash=sha256:fc37e9aef10a696a5a4474802930079ccfc14d9f9c10b4662169671ff034b7df \
     --hash=sha256:fdee8405931b0615220e5ddf8cd7edd8592c606a8e4ca2a00704883c396e4479
     # via aiomonitor
-aiomonitor==0.6.0 \
-    --hash=sha256:31d30d1e9c0a23926edba2a2242b8572c6e8639af9aae2692dee863064d27e48 \
-    --hash=sha256:3ccc7f99eeb1e2406045eab0a2f6776990e5651a115ee269d5bb9ef41b917397
+aiomonitor==0.7.0 \
+    --hash=sha256:109b9ad309a44c0c5db1219d106f4062615151ad3f0e288a0c104fbb004d0398 \
+    --hash=sha256:4ac9314b09f237571024e5a08473db52cf7463685f7b8d708b5d2adf5bfeb591
     # via -r requirements/dev.in
 aiosignal==1.3.1 \
     --hash=sha256:54cd96e15e1649b75d6c87526a6ff0b6c1b0dd3459f43d9ca11d48c339b68cfc \
