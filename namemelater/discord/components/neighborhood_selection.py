@@ -78,7 +78,9 @@ class NeighborhoodSelection(Extension):
             await ctx.send("East? What are you, a fish?")
             return
         await ctx.member.add_roles([self.NEIGHBORHOODS[neighborhood]["role_id"]])
-        await ctx.edit_origin("Select yer neighborhood!", components=self.components)
+        await ctx.edit_origin(
+            content="Select yer neighborhood!", components=self.components
+        )
 
 
 def setup(bot):
