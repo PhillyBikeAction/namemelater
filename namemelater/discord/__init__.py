@@ -56,3 +56,8 @@ for _, name, _ in pkgutil.walk_packages(
     [__path__[0] + "/commands"], prefix=__name__ + ".commands."
 ):
     bot.load_extension(name)
+
+for _, name, _ in pkgutil.walk_packages(
+    [__path__[0] + "/components"], prefix=__name__ + ".components."
+):
+    bot.load_extension(name)

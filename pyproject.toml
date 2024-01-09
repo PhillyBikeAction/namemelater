@@ -2,3 +2,10 @@
 tortoise_orm = "namemelater.db.TORTOISE_ORM"
 location = "./namemelater/migrations"
 src_folder = "./."
+
+[tool.setuptools]
+py-modules = []
+
+[project]
+name = 'namemelater'
+version = '1.0.0'
