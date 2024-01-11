@@ -100,7 +100,7 @@ aiohttp==3.8.6 \
 aiomonitor==0.6.0 \
     --hash=sha256:31d30d1e9c0a23926edba2a2242b8572c6e8639af9aae2692dee863064d27e48 \
     --hash=sha256:3ccc7f99eeb1e2406045eab0a2f6776990e5651a115ee269d5bb9ef41b917397
-    # via -r requirements/dev.in
+    # via -r dev.in
 aiosignal==1.3.1 \
     --hash=sha256:54cd96e15e1649b75d6c87526a6ff0b6c1b0dd3459f43d9ca11d48c339b68cfc \
     --hash=sha256:f8376fb07dd1e86a584e4fcdec80b36b7f81aac666ebc724e2c090300dd83b17
@@ -298,14 +298,14 @@ janus==1.0.0 \
     --hash=sha256:2596ea5482711c1ee3ef2df6c290aaf370a13c55a007826e8f7c32d696d1d00a \
     --hash=sha256:df976f2cdcfb034b147a2d51edfc34ff6bfb12d4e2643d3ad0e10de058cb1612
     # via aiomonitor
-jinja2==3.1.2 \
-    --hash=sha256:31351a702a408a9e7595a8fc6150fc3f43bb6bf7e319770cbc0db9df9437e852 \
-    --hash=sha256:6088930bfe239f0e6710546ab9c19c9ef35e29792895fed6e6e31a023a182a61
+jinja2==3.1.3 \
+    --hash=sha256:7d6d50dd97d52cbc355597bd845fabfbac3f551e1f99619e39a35ce8c370b5fa \
+    --hash=sha256:ac8bd6544d4bb2c9792bf3a159e80bba8fda7f07e81bc3aed565432d5925ba90
     # via aiomonitor
 jurigged==0.5.6 \
     --hash=sha256:4512306ba07b518adb75af7ca08813ffd339efed74f25b6806ccba243f336c09 \
     --hash=sha256:9177c8ef20e82175ca7db7415bff6dba2301545e8abdf9153ef3f68a259cc123
-    # via -r requirements/dev.in
+    # via -r dev.in
 markupsafe==2.1.3 \
     --hash=sha256:05fb21170423db021895e1ea1e1f3ab3adb85d1c2333cbc2310f2a26bc77272e \
     --hash=sha256:0a4e4a1aff6c7ac4cd55792abf96c915634c2b97e3cc1c7129578aa68ebd754e \
@@ -457,7 +457,7 @@ packaging==23.2 \
 pip-tools==7.3.0 \
     --hash=sha256:8717693288720a8c6ebd07149c93ab0be1fced0b5191df9e9decd3263e20d85e \
     --hash=sha256:8e9c99127fe024c025b46a0b2d15c7bd47f18f33226cf7330d35493663fc1d1d
-    # via -r requirements/dev.in
+    # via -r dev.in
 prompt-toolkit==3.0.40 \
     --hash=sha256:99ba3dfb23d5b5af89712f89e60a5f3d9b8b67a9482ca377c5771d0e9047a34b \
     --hash=sha256:a371c06bb1d66cd499fecd708e50c0b6ae00acba9822ba33c586e2f16d1b739e
